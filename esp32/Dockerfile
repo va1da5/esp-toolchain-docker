@@ -7,7 +7,7 @@ ENV PATH $IDF_PATH/components/esptool_py/esptool:$IDF_PATH/components/espcoredum
 
 WORKDIR /opt
 
-RUN apt update && apt install -y wget git minicom unzip make vim flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util \
+RUN apt update && apt install -y wget git minicom unzip make vim libncurses-dev flex bison gperf python3 python3-pip python3-setuptools cmake ninja-build ccache libffi-dev libssl-dev dfu-util \
   && rm -rf /var/lib/apt/lists/* \
   && update-alternatives --install /usr/bin/python python /usr/bin/python3 10 \
   && git clone -b v4.0.2 --recursive https://github.com/espressif/esp-idf.git $VERSION \
